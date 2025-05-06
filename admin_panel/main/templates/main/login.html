@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="{% static 'main/css/login.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="login-container">
+    <img src="{% static 'main/img/icon.png'%}" alt="Visual Music Logo" class="logo">
+    <h1>Visual Music</h1>
+    <form>
+        <div class="input-group">
+            <input type="text" id="login" name="login" placeholder="Логин" required>
+            <img src="{% static 'main/img/cross-pink.png' %}" id="clear-login" class="clear-icon" alt="Очистить поле">
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" name="password" placeholder="Пароль" required>
+            <img src="{% static 'main/img/eye-on.png' %}" class="toggle-password" alt="Показать/скрыть пароль">
+            <img src="{% static 'main/img/cross-pink.png' %}" id="clear-password" class="clear-icon"
+                 alt="Очистить поле">
+        </div>
+        <button type="submit" id="login-button">ВОЙТИ</button>
+    </form>
+</div>
+
+<script>
+    const eyeOnIconUrl = "{% static 'main/img/eye-on.png' %}";
+    const eyeOffIconUrl = "{% static 'main/img/eye-off.png' %}";
+</script>
+
+<script src="{% static 'main/js/login-script.js'%}"></script>
+</body>
+</html>
