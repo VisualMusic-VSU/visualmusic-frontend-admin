@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #302020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #E5BDB9;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.input-group {
+    position: relative;
+    width: 300px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+input[type="text"]:valid,
+input[type="password"]:valid {
+    border: 1px solid #AC8885;
+    transition: background-color 0.3s ease;
+    color: #E5BDB9;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid rgba(172, 136, 133, 0.42);
+    border-radius: 10px;
+    background-color: #382828;
+    font-size: 16px;
+    box-sizing: border-box;
+    color: #E5BDB9;
+    line-height: normal;
+}
+
+input[type="password"] {
+    padding-right: 65px;
+}
+
+input::placeholder {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: rgba(229, 189, 185, 0.4);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 40px;
+    top: 23%;
+    width: 22px;
+    height: 20px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.clear-icon {
+    position: absolute;
+    right: 15px;
+    top: 25%;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4a3838;
+    color: #E2E2E21F;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: not-allowed;
+    margin-top: 10px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button[type="submit"].active {
+    background-color: #FFB4AC;
+    color: #690007;
+    cursor: pointer;
+}
+
+button[type="submit"].active:hover {
+    background-color: #ffc8c3;
+}
