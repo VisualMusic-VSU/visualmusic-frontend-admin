@@ -66,6 +66,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalCoverCreated = document.getElementById('modal-cover-created');
         const tableBody = document.querySelector('.styled-table tbody');
 
+        const imageSliderContainer = modalOverlay.querySelector('.image-slider-container');
+        const imageSlider = modalOverlay.querySelector('.image-slider');
+        const sliderPrevButton = modalOverlay.querySelector('.slider-control.prev');
+        const sliderNextButton = modalOverlay.querySelector('.slider-control.next');
+        const slides = modalOverlay.querySelectorAll('.modal-image-slide');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            if (imageSlider && slides.length > 0) {
+                const translateValue = -currentIndex * slides[0].offsetWidth + 'px';
+                imageSlider.style.transform = `translateX(${translateValue})`;
+            }
+        }
+
+        function nextSlide() {
+            if (slides.length > 0 && currentIndex < slides.length - 1) {
+                currentIndex++;
+                updateSlider();
+            }
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            }
+        }
+
         const openUserDetailsModal = (tableRow) => {
             const id = tableRow.cells[1] ? tableRow.cells[1].textContent.trim() : 'N/A';
             const userId = tableRow.cells[2] ? tableRow.cells[2].textContent.trim() : 'N/A';
@@ -78,6 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
             modalCoverImageUrl.textContent = imageUrl;
             modalCoverCreated.textContent = created;
 
+            currentIndex = 0;
+            updateSlider();
+
             modalOverlay.style.display = 'flex';
         }
         const closeModal = () => {
@@ -89,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (coverCell) {
                     const tableRow = coverCell.closest('tr');
                     if (tableRow) {
-                        openUserDetailsModal(tableRow); // Открываем окно
+                        openUserDetailsModal(tableRow);
                     }
                 }
             });
@@ -110,6 +141,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeModal();
             }
         });
+        if (sliderPrevButton) {
+            sliderPrevButton.addEventListener('click', prevSlide);
+        }
+        if (sliderNextButton) {
+            sliderNextButton.addEventListener('click', nextSlide);
+        }
     } else {
         console.warn("Modal overlay element with id 'cover-details-modal' not found.");
     }

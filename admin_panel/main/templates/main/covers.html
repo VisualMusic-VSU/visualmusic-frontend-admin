@@ -198,16 +198,21 @@
                 </span>
             </div>
             <div class="detail-row">
-                <span class="detail-label">• image</span>
-                <span class="detail-value" id="modal-cover-image-container">
-                    <img src="{% static 'main/img/photo.png' %}" alt="Обложка" id="modal-cover-image"
-                         class="modal-image-preview">
-                </span>
-                <span class="detail-actions">
-                    <img src="{% static 'main/img/pencil.png' %}" alt="edit" class="icon edit">
-                    <img src="{% static 'main/img/trash.png' %}" alt="delete" class="icon delete">
-                </span>
-            </div>
+                <span class="detail-label">• images</span>
+                <div class="image-slider-container">
+                    <div class="image-slider">
+                        <img src="{% static 'main/img/photo.png' %}" alt="Обложка 1" class="modal-image-slide">
+                        <img src="{% static 'main/img/user.png' %}" alt="Обложка 2" class="modal-image-slide">
+                        <img src="{% static 'main/img/icon.png' %}" alt="Обложка 3" class="modal-image-slide">
+                    </div>
+                    <button class="slider-control prev">&#10094;</button>
+                    <button class="slider-control next">&#10095;</button>
+                </div>
+            </span>
+            <span class="detail-actions">
+                <img src="{% static 'main/img/pencil.png' %}" alt="edit" class="icon edit">
+                <img src="{% static 'main/img/trash.png' %}" alt="delete" class="icon delete">
+            </span>
         </div>
     </div>
 </div>
