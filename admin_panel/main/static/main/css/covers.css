@@ -363,3 +363,14 @@ body {
 .slider-control.next {
     right: 10px;
 }
+
+.logout-btn {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.logout-btn img {
+    width: 30px;
+    height: 30px;
+}
