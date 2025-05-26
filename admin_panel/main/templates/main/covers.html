@@ -104,8 +104,8 @@
                 <td><input type="checkbox"></td>
                 <td class="cover-cell">0</td>
                 <td>3</td>
-                <td>example_url</td>
-                <td>00.00.0000 00:00</td>
+                <td>bucket/image1.png</td>
+                <td>17.05.2025 15:00</td>
                 <td class="actions">
                     <img src="{% static 'main/img/pencil.png' %}" alt="edit" class="icon edit">
                     <img src="{% static 'main/img/trash.png' %}" alt="delete" class="icon delete">
@@ -113,10 +113,10 @@
             </tr>
             <tr>
                 <td><input type="checkbox"></td>
-                <td class="cover-cell">0</td>
-                <td>3</td>
-                <td>example_url</td>
-                <td>00.00.0000 00:00</td>
+                <td class="cover-cell">1</td>
+                <td>2</td>
+                <td>bucket/image2.png</td>
+                <td>19.05.2025 14:30</td>
                 <td class="actions">
                     <img src="{% static 'main/img/pencil.png' %}" alt="edit" class="icon edit">
                     <img src="{% static 'main/img/trash.png' %}" alt="delete" class="icon delete">
@@ -124,10 +124,10 @@
             </tr>
             <tr>
                 <td><input type="checkbox"></td>
-                <td class="cover-cell">0</td>
-                <td>3</td>
-                <td>example_url</td>
-                <td>00.00.0000 00:00</td>
+                <td class="cover-cell">2</td>
+                <td>4</td>
+                <td>bucket/image3.png</td>
+                <td>20.05.2025 12:10</td>
                 <td class="actions">
                     <img src="{% static 'main/img/pencil.png' %}" alt="edit" class="icon edit">
                     <img src="{% static 'main/img/trash.png' %}" alt="delete" class="icon delete">
@@ -135,10 +135,10 @@
             </tr>
             <tr>
                 <td><input type="checkbox"></td>
-                <td class="cover-cell">0</td>
-                <td>3</td>
-                <td>example_url</td>
-                <td>00.00.0000 00:00</td>
+                <td class="cover-cell">3</td>
+                <td>5</td>
+                <td>bucket/image4.png</td>
+                <td>22.05.2025 13:00</td>
                 <td class="actions">
                     <img src="{% static 'main/img/pencil.png' %}" alt="edit" class="icon edit">
                     <img src="{% static 'main/img/trash.png' %}" alt="delete" class="icon delete">
@@ -146,10 +146,10 @@
             </tr>
             <tr>
                 <td><input type="checkbox"></td>
-                <td class="cover-cell">0</td>
-                <td>3</td>
-                <td>example_url</td>
-                <td>00.00.0000 00:00</td>
+                <td class="cover-cell">4</td>
+                <td>7</td>
+                <td>bucket/image5.png</td>
+                <td>24.05.2025 18:00</td>
                 <td class="actions">
                     <img src="{% static 'main/img/pencil.png' %}" alt="edit" class="icon edit">
                     <img src="{% static 'main/img/trash.png' %}" alt="delete" class="icon delete">
@@ -158,6 +158,10 @@
             </tbody>
         </table>
     </div>
+</div>
+
+<div class="logout-btn">
+    <a href=""><img src="{% static 'main/img/log-out.png' %}" alt="Logout"/></a>
 </div>
 
 <div id="cover-details-modal" class="modal-overlay">
@@ -198,16 +202,21 @@
                 </span>
             </div>
             <div class="detail-row">
-                <span class="detail-label">• image</span>
-                <span class="detail-value" id="modal-cover-image-container">
-                    <img src="{% static 'main/img/photo.png' %}" alt="Обложка" id="modal-cover-image"
-                         class="modal-image-preview">
-                </span>
-                <span class="detail-actions">
-                    <img src="{% static 'main/img/pencil.png' %}" alt="edit" class="icon edit">
-                    <img src="{% static 'main/img/trash.png' %}" alt="delete" class="icon delete">
-                </span>
-            </div>
+                <span class="detail-label">• images</span>
+                <div class="image-slider-container">
+                    <div class="image-slider">
+                        <img src="{% static 'main/img/photo.png' %}" alt="Обложка 1" class="modal-image-slide">
+                        <img src="{% static 'main/img/user.png' %}" alt="Обложка 2" class="modal-image-slide">
+                        <img src="{% static 'main/img/icon.png' %}" alt="Обложка 3" class="modal-image-slide">
+                    </div>
+                    <button class="slider-control prev">&#10094;</button>
+                    <button class="slider-control next">&#10095;</button>
+                </div>
+            </span>
+            <span class="detail-actions">
+                <img src="{% static 'main/img/pencil.png' %}" alt="edit" class="icon edit">
+                <img src="{% static 'main/img/trash.png' %}" alt="delete" class="icon delete">
+            </span>
         </div>
     </div>
 </div>
